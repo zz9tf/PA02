@@ -57,8 +57,11 @@ Many software projects use SQLite to manage their data and this problem set will
 9. **Creating a transcript** - use the "script" command to create a transcript of your session as you demonstrate each of the features you have implemented. You may need to clone your project to tiara to be able to use the script feature.
 
 10. **create a README.md file** which describes your app and contains 
+   
    a. script of you running pylint, and 
+   
    b. then running pytest, and 
+   
    c. then running tracker.py and demonstrating all of the features you added
  
 ## What to upload to mastery.cs.brandeis.edu (programs)
