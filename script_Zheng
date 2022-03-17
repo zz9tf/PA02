@@ -1,0 +1,112 @@
+Script started on Thu Mar 17 13:08:02 2022
+Restored session: Thu Mar 17 13:07:21 EDT 2022
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hlls[?2004l
+__pycache__		requirement.md		tracker.py
+category.py		test_category.py	transactions.py
+pytest.ini		tracker.db		typescript
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hppyl test[?2004l
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.8.8, pytest-6.2.3, py-1.10.0, pluggy-0.13.1
+rootdir: /Users/zhengzheng/Documents/python_workspace/Assignments/PA02, configfile: pytest.ini
+plugins: anyio-2.2.0
+[1mcollecting ... [0m[1mcollected 5 items                                                              [0m
+
+test_category.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                   [100%][0m
+
+[32m============================== [32m[1m5 passed[0m[32m in 0.33s[0m[32m ===============================[0m
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hppylint tracker.y py[?2004l
+************* Module tracker
+tracker.py:44:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 9.83/10 (previous run: 9.83/10, +0.00)
+
+[0m[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hppylint test_category.py[?2004l
+************* Module test_category
+test_category.py:127:0: C0303: Trailing whitespace (trailing-whitespace)
+test_category.py:153:0: C0304: Final newline missing (missing-final-newline)
+test_category.py:15:13: W0621: Redefining name 'dbfile' from outer scope (line 10) (redefined-outer-name)
+test_category.py:17:4: C0103: Variable name "db" doesn't conform to snake_case naming style (invalid-name)
+test_category.py:22:13: W0621: Redefining name 'empty_db' from outer scope (line 15) (redefined-outer-name)
+test_category.py:36:11: W0621: Redefining name 'small_db' from outer scope (line 22) (redefined-outer-name)
+test_category.py:41:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+test_category.py:59:4: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)
+test_category.py:67:13: W0621: Redefining name 'med_db' from outer scope (line 36) (redefined-outer-name)
+test_category.py:83:16: W0621: Redefining name 'med_db' from outer scope (line 36) (redefined-outer-name)
+test_category.py:103:16: W0621: Redefining name 'med_db' from outer scope (line 36) (redefined-outer-name)
+test_category.py:124:0: C0116: Missing function or method docstring (missing-function-docstring)
+test_category.py:126:4: C0103: Variable name "db" doesn't conform to snake_case naming style (invalid-name)
+test_category.py:129:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+test_category.py:139:25: W0621: Redefining name 'tran_db' from outer scope (line 124) (redefined-outer-name)
+
+------------------------------------------------------------------
+Your code has been rated at 8.08/10 (previous run: 8.08/10, +0.00)
+
+[0m[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hlls[?2004l
+__pycache__		requirement.md		tracker.py
+category.py		test_category.py	transactions.py
+pytest.ini		tracker.db		typescript
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hccd ==  c  ppylint transactions.p[?2004l
+************* Module transactions.p
+transactions.p:1:0: F0001: No module named transactions.p (fatal)
+[0m[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hpylint transactions.py[?2004l
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+[0m[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hppython 3 tracker.py[?2004l
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 5
+-- add transaction --
+new category name: h a
+item_num: 10
+the amount of new category: 100
+new category description: Here is a test.
+date of this update(1999-01-01): 20220 -03017
+> ls
+choice ls not yet implemented
+> 0
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hlls[?2004l
+__pycache__		requirement.md		tracker.py
+category.py		test_category.py	transactions.py
+pytest.ini		tracker.db		typescript
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hssqlite3[?2004l
+SQLite version 3.35.4 2021-04-02 15:20:15
+Enter ".help" for usage hints.
+Connected to a [1mtransient in-memory database[0m.
+Use ".open FILENAME" to reopen on a persistent database.
+[?2004hsqlite> [?2004l
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004hsqlite3 [7mtracker.db[27m[10D[27mt[27mr[27ma[27mc[27mk[27me[27mr[27m.[27md[27mb[?2004l
+SQLite version 3.35.4 2021-04-02 15:20:15
+Enter ".help" for usage hints.
+[?2004hsqlite> .tables
+[?2004lcategories    transactions
+[?2004hsqlite> .schema table[K[K[K[K[K[7mtransactions[27mtransactions
+[?2004lCREATE TABLE transactions
+                    (item_num int, amount float, category text, date date, description text);
+[?2004hsqlite> Se[KELECT * from[K[K[K[KFROM transactions
+[?2004l[?2004h   ...> ;
+[?2004l3|60.0|cat|2022-03-16|This is a test for this table
+10|100.0|a|2022-03017|Here is a test.
+[?2004hsqlite> [?2004l
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://zhengdembp.dyn.brandeis.edu/Users/zhengzheng/Documents/python_workspace/Assignments/PA02[0m[27m[24m[J(base) zhengzheng@zhengdembp PA02 % [K[?2004heexit[?2004l
+Saving session...
+...saving history...truncating history files...
+...completed.
+
+Script done on Thu Mar 17 13:14:46 2022
