@@ -35,7 +35,7 @@ import sys
 from transactions import Transaction
 from category import Category
 
-transactions = Transaction('transaction.db')
+transactions = Transaction('category.db')
 category = Category('category.db')
 
 
