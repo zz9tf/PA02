@@ -35,8 +35,8 @@ import sys
 from transactions import Transaction
 from category import Category
 
-transactions = Transaction('tracker.db')
-category = Category('tracker.db')
+transactions = Transaction('transaction.db')
+category = Category('category.db')
 
 
 # here is the menu for the tracker app
@@ -81,19 +81,33 @@ def process_choice():
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
+    elif choice=='4':
+        trans = transactions.select_all()
+        print_transactions(trans)
     elif choice=='5':
         print("-- add transaction --")
-        name = input("new category name: ")
-        item_num = int(input("item_num: "))
-        amount = int(input("the amount of new category: "))
-        desc = input("new category description: ")
-        date = input("date of this update(1999-01-01): ")
-        tran = {"item_num": item_num,
-                "category": name,
+        item = input("item #: ")
+        amount = int(input("the amount of new item: "))
+        cate = input("category: ")
+        desc = input("new item description: ")
+        date = int(input("date of this update(yyyymmdd): "))
+        tran = {"item": item,
+                "category": cate,
                 "amount": amount,
                 "description": desc,
                 "date": date}
         transactions.add(tran)
+    elif choice=='6':
+        print("-- delete transaction --")
+        id = input("the id you want to delete: ")
+        transactions.delete(id)
+    elif choice=='7':
+        print("-- summarize transactions by date --")
+        res = transactions.sumByDate()
+        #print(res)
+        print("%-10s %-10s"%('date', 'sum'))
+        print("-"*15)
+        print("%-10d %-10d"%(res['date'],res['sum']))
     else:
         print("choice",choice,"not yet implemented")
 
@@ -116,8 +130,8 @@ def print_transactions(items):
         return
     print('\n')
     print("%-10s %-10s %-10s %-10s %-30s"%(
-        'item #','amount','category','date','description'))
-    print('-'*40)
+        'item','amount','category','date','description'))
+    print('-'*60)
     for item in items:
         values = tuple(item.values())
         print("%-10s %-10d %-10s %-10d %-30s"%values)

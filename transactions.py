@@ -12,19 +12,19 @@ This app will store the data in a SQLite database ~/tracker.db
 
 import sqlite3
 
-def to_cat_dict(cat_tuple):
-    ''' cat is a transaction tuple (rowid, name, desc) ----- Written by Zheng'''
-    cat = {
-        'item_num':cat_tuple[1]
-        , 'amount':cat_tuple[2]
-        , 'category':cat_tuple[3]
-        , 'date':cat_tuple[4]
-        , 'description':cat_tuple[5]}
-    return cat
+def to_trans_dict(trans_tuple):
+    ''' trans is a transaction tuple (item_num, amount, category, date, description) ----- Written by Zheng'''
+    trans = {
+        'item':trans_tuple[1]
+        , 'amount':trans_tuple[2]
+        , 'category':trans_tuple[3]
+        , 'date':trans_tuple[4]
+        , 'description':trans_tuple[5]}
+    return trans
 
-def to_cat_dict_list(cat_tuples):
-    ''' convert a list of category tuples into a list of dictionaries ----- Written by Zheng'''
-    return [to_cat_dict(cat) for cat in cat_tuples]
+def to_trans_dict_list(trans_tuples):
+    ''' convert a list of trans tuples into a list of dictionaries ----- Written by Zheng'''
+    return [to_trans_dict(trans) for trans in trans_tuples]
 
 class Transaction:
     ''' Transaction represents a table of transactions ----- Written by Zheng '''
@@ -32,7 +32,7 @@ class Transaction:
         con= sqlite3.connect(filename)
         cur = con.cursor()
         cur.execute('''CREATE TABLE IF NOT EXISTS transactions
-                    (item_num int, amount float, category text, date date, description text)''')
+                    (item text, amount int, category text, date int, description text)''')
         con.commit()
         con.close()
         self.dbfile = filename
@@ -45,7 +45,7 @@ class Transaction:
         tuples = cur.fetchall()
         con.commit()
         con.close()
-        return to_cat_dict_list(tuples)
+        return to_trans_dict_list(tuples)
 
     def select_one(self,rowid):
         ''' return a transaction with a specified rowid ----- Written by Zheng '''
@@ -55,7 +55,7 @@ class Transaction:
         tuples = cur.fetchall()
         con.commit()
         con.close()
-        return to_cat_dict(tuples[0])
+        return to_trans_dict(tuples[0])
 
     def add(self,item):
         ''' add a transaction to the transactions table.
@@ -66,7 +66,7 @@ class Transaction:
         cur = con.cursor()
         cur.execute("""INSERT INTO transactions
                  VALUES(?,?,?,?,?)"""
-                ,(item['item_num']
+                ,(item['item']
                 ,item['amount']
                 ,item['category']
                 ,item['date']
@@ -78,3 +78,26 @@ class Transaction:
         con.close()
 
         return last_rowid[0]
+
+    def delete(self, item):
+        ''' delete a transaction defined by item # ----- Written by Zixin '''
+        con = sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''delete from transactions
+                        where item = (?)''',(item,))
+        con.commit()
+        con.close()
+    
+    def sumByDate(self):
+        ''' sum up item nums group by date ----- Written by Zixin '''
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''select date, sum(amount) from transactions group by date''')
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        res = {
+            'date':tuples[0][0],
+            'sum':tuples[0][1]
+        }
+        return res
