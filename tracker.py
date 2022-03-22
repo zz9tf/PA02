@@ -35,7 +35,7 @@ import sys
 from transactions import Transaction
 from category import Category
 
-transactions = Transaction('category.db')
+transactions = Transaction('transaction.db')
 category = Category('category.db')
 
 
@@ -82,6 +82,7 @@ def process_choice():
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
     elif choice=='4':
+        print("-- show transactions --")
         trans = transactions.select_all()
         print_transactions(trans)
     elif choice=='5':
@@ -107,7 +108,8 @@ def process_choice():
         #print(res)
         print("%-10s %-10s"%('date', 'sum'))
         print("-"*15)
-        print("%-10d %-10d"%(res['date'],res['sum']))
+        for tuple in res:
+            print("%-10d %-10d"%(tuple[0], tuple[1]))
     else:
         print("choice",choice,"not yet implemented")
 
@@ -129,12 +131,12 @@ def print_transactions(items):
         print('no items to print')
         return
     print('\n')
-    print("%-10s %-10s %-10s %-10s %-30s"%(
-        'item','amount','category','date','description'))
-    print('-'*60)
+    print("%-10s %-10s %-10s %-10s %-10s %-30s"%(
+        'rowid', 'item','amount','category','date','description'))
+    print('-'*70)
     for item in items:
         values = tuple(item.values())
-        print("%-10s %-10d %-10s %-10d %-30s"%values)
+        print("%-10d %-10s %-10d %-10s %-10d %-30s"%values)
 
 def print_category(cat):
     ''' print category '''

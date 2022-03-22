@@ -15,7 +15,8 @@ import sqlite3
 def to_trans_dict(trans_tuple):
     ''' trans is a transaction tuple (item_num, amount, category, date, description) ----- Written by Zheng'''
     trans = {
-        'item':trans_tuple[1]
+        'rowid':trans_tuple[0]
+        ,'item':trans_tuple[1]
         , 'amount':trans_tuple[2]
         , 'category':trans_tuple[3]
         , 'date':trans_tuple[4]
@@ -79,14 +80,16 @@ class Transaction:
 
         return last_rowid[0]
 
-    def delete(self, item):
-        ''' delete a transaction defined by item # ----- Written by Zixin '''
+    def delete(self, rowid):
+        ''' delete a transaction defined by rowid ----- Written by Zixin '''
         con = sqlite3.connect(self.dbfile)
         cur = con.cursor()
+        deletedDict = self.select_one(rowid)
         cur.execute('''delete from transactions
-                        where item = (?)''',(item,))
+                        where rowid = (?)''',(rowid,))
         con.commit()
         con.close()
+        return deletedDict
     
     def sumByDate(self):
         ''' sum up item nums group by date ----- Written by Zixin '''
@@ -96,8 +99,4 @@ class Transaction:
         tuples = cur.fetchall()
         con.commit()
         con.close()
-        res = {
-            'date':tuples[0][0],
-            'sum':tuples[0][1]
-        }
-        return res
+        return tuples

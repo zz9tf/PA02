@@ -117,37 +117,3 @@ def test_update(med_db):
     cat2 = med_db.select_one(rowid)
     assert cat2['name']==cat1['name']
     assert cat2['desc']==cat1['desc']
-
-
-
-@pytest.fixture
-def tran_db(tmpdir):
-    filename = tmpdir.join('test_tracker.db')
-    db = Transaction(filename)
-    
-    for i in range(10):
-        s = str(i)
-        cat ={'item': i,
-            'amount': i*3838.92%10000,
-            'category':'category'+s,
-            'date': "20220316",
-            'description':'description '+s,}
-        db.add(cat)
-    yield db
-
-@pytest.mark.add_transaction
-def test_add_transaction(tran_db):
-    ''' add a category to db, the select it, then delete it'''
-
-    tran0 = {"category":'testing_add',
-            'item': 10,
-            'amount': 199.67,
-            'description': "This is a test",
-            "date": "20220316"}
-    cats0 = tran_db.select_all()
-    rowid = tran_db.add(tran0)
-    tran1 = tran_db.select_all()
-    assert len(tran1) == len(cats0) + 1
-    tran1 = tran_db.select_one(rowid)
-    assert tran1['category']==tran0['category']
-    assert tran1['description']==tran0['description']
