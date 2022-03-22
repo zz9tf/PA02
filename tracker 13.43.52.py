@@ -109,7 +109,11 @@ def process_choice():
         print("%-10s %-10s"%('date', 'sum'))
         print("-"*15)
         for tuple in res:
+<<<<<<< HEAD:tracker.py
             print("%-10d %-10d"%(tuple[0], tuple[1]))
+=======
+            print("%-10d %-10d"%(tuple[0],tuple[1]))
+>>>>>>> 684b183b0a7be220f8380c92debd81d2ba9140a1:tracker 13.43.52.py
     else:
         print("choice",choice,"not yet implemented")
 
