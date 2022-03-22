@@ -127,10 +127,10 @@ def tran_db(tmpdir):
     
     for i in range(10):
         s = str(i)
-        cat ={'item_num': i,
+        cat ={'item': i,
             'amount': i*3838.92%10000,
             'category':'category'+s,
-            'date': "2022-03-16",
+            'date': "20220316",
             'description':'description '+s,}
         db.add(cat)
     yield db
@@ -140,10 +140,10 @@ def test_add_transaction(tran_db):
     ''' add a category to db, the select it, then delete it'''
 
     tran0 = {"category":'testing_add',
-            'item_num': 10,
+            'item': 10,
             'amount': 199.67,
             'description': "This is a test",
-            "date": "2022-03-16"}
+            "date": "20220316"}
     cats0 = tran_db.select_all()
     rowid = tran_db.add(tran0)
     tran1 = tran_db.select_all()
