@@ -40,7 +40,7 @@ Many software projects use SQLite to manage their data and this problem set will
    
    i. summarize transactions by month
    
-   g. summarize transactions by year
+   j. summarize transactions by year
    
    k. summarize transactions by category
    
