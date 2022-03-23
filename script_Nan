@@ -1,0 +1,80 @@
+Script started on Wed Mar 23 15:41:55 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ pylint tracker.py
+************* Module tracker
+tracker.py:120:65: C0303: Trailing whitespace (trailing-whitespace)
+tracker.py:44:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+tracker.py:103:8: W0622: Redefining built-in 'id' (redefined-builtin)
+tracker.py:111:12: W0622: Redefining built-in 'tuple' (redefined-builtin)
+tracker.py:62:0: R0914: Too many local variables (16/15) (too-many-locals)
+tracker.py:103:8: C0103: Variable name "id" doesn't conform to snake_case naming style (invalid-name)
+tracker.py:62:0: R0912: Too many branches (14/12) (too-many-branches)
+tracker.py:62:0: R0915: Too many statements (56/50) (too-many-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 9.08/10 (previous run: 9.08/10, +0.00)
+
+bash-3.2$ ls
+README.md		requirement.md		tracker.py
+__pycache__		script_Zheng		transaction.db
+category.db		test.db			transactions.py
+category.py		test_category.py	typescript
+pytest.ini		test_transactions.py
+bash-3.2$ pytest -v -m [K[K[K[K
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.9.5, pytest-6.2.5, py-1.9.0, pluggy-1.0.0 -- /Users/flora/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/flora/Brandeis/103a_Fundamentals of Software Engineering/103hw/PA02, configfile: pytest.ini
+[1mcollecting ... [0m[1mcollected 9 items                                                              [0m
+
+test_category.py::test_to_cat_dict [32mPASSED[0m[32m                                [ 11%][0m
+test_category.py::test_add [32mPASSED[0m[32m                                        [ 22%][0m
+test_category.py::test_delete [32mPASSED[0m[32m                                     [ 33%][0m
+test_category.py::test_update [32mPASSED[0m[32m                                     [ 44%][0m
+test_transactions.py::test_add_transaction [32mPASSED[0m[32m                        [ 55%][0m
+test_transactions.py::test_delete_transaction [32mPASSED[0m[32m                     [ 66%][0m
+test_transactions.py::test_sumByDate_transaction [32mPASSED[0m[32m                  [ 77%][0m
+test_transactions.py::test_sumByYear_transaction [32mPASSED[0m[32m                  [ 88%][0m
+test_transactions.py::test_sumByCat_transaction [32mPASSED[0m[32m                   [100%][0m
+
+[32m============================== [32m[1m9 passed[0m[32m in 0.32s[0m[32m ===============================[0m
+bash-3.2$ sumByYear_transaction[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpytest -v -m sumByYear_transaction
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.9.5, pytest-6.2.5, py-1.9.0, pluggy-1.0.0 -- /Users/flora/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/flora/Brandeis/103a_Fundamentals of Software Engineering/103hw/PA02, configfile: pytest.ini
+[1mcollecting ... [0m[1mcollected 9 items / 8 deselected / 1 selected                                  [0m
+
+test_transactions.py::test_sumByYear_transaction [32mPASSED[0m[32m                  [100%][0m
+
+[32m======================= [32m[1m1 passed[0m, [33m8 deselected[0m[32m in 0.05s[0m[32m ========================[0m
+bash-3.2$ python [K3 tracker.py
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 9
+-- summarize transactions by year --
+year       sum       
+---------------
+2022       280       
+> 0
+bash-3.2$ exist
+bash: exist: command not found
+bash-3.2$ exit
+exit
+
+Script done on Wed Mar 23 15:46:09 2022
