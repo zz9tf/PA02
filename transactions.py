@@ -100,3 +100,13 @@ class Transaction:
         con.commit()
         con.close()
         return tuples
+    
+    def sumByCat(self):
+        ''' sum up item nums group by category ----- Written by Zixin '''
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''select category, sum(amount) from transactions group by category''')
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return tuples
