@@ -110,6 +110,13 @@ def process_choice():
         print("-"*15)
         for tuple in res:
             print("%-10d %-10d"%(tuple[0], tuple[1]))
+    elif choice=='10':
+        print("-- summarize transactions by category --")
+        res = transactions.sumByCat()
+        print("%-10s %-10s"%('date', 'sum'))
+        print("-"*15)
+        for tuple in res:
+            print("%-10s %-10d"%(tuple[0], tuple[1]))
     else:
         print("choice",choice,"not yet implemented")
 
