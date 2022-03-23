@@ -125,6 +125,8 @@ def process_choice():
         print("-"*15)
         for tuple in res:
             print("%-10s %-10d"%(tuple[0], tuple[1]))
+    elif choice=='11':
+        print(menu)
     else:
         print("choice",choice,"not yet implemented")
 

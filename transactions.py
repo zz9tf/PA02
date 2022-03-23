@@ -112,7 +112,7 @@ class Transaction:
         return tuples_year
     
     def sumByCat(self):
-        ''' sum up item nums group by category ----- Written by Zixin '''
+        ''' sum up item nums group by category ----- Written by DanqiuFu '''
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
         cur.execute('''select category, sum(amount) from transactions group by category''')
