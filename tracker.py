@@ -116,8 +116,8 @@ def process_choice():
         #print(res)
         print("%-10s %-10s"%('year', 'sum'))
         print("-"*15)
-        for tupleY in res:
-            print("%-10d %-10d"%(tupleY[0], tupleY[1]))  
+        for tuples_year in res:
+            print("%-10d %-10d"%(tuples_year[0], tuples_year[1]))  
     elif choice=='10':
         print("-- summarize transactions by category --")
         res = transactions.sumByCat()
