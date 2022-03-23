@@ -101,6 +101,16 @@ class Transaction:
         con.close()
         return tuples
     
+    def sumByYear(self):
+        ''' sum up item nums group by year ----- Written by Nan '''
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''select date/10000 as n, sum(amount) from transactions group by date/10000''')
+        tuplesY = cur.fetchall()
+        con.commit()
+        con.close()
+        return tuplesY
+    
     def sumByCat(self):
         ''' sum up item nums group by category ----- Written by Zixin '''
         con= sqlite3.connect(self.dbfile)
