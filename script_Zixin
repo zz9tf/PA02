@@ -1,0 +1,76 @@
+(base) felix@FelixdeMBP PA02 % pylint transactions.py
+PYLINTHOME is now '/Users/felix/Library/Caches/pylint' but obsolescent '/Users/felix/.pylint.d' is found; you can safely remove the latter
+************* Module transactions
+transactions.py:16:0: C0301: Line too long (110/100) (line-too-long)
+transactions.py:93:0: C0303: Trailing whitespace (trailing-whitespace)
+transactions.py:103:0: C0303: Trailing whitespace (trailing-whitespace)
+transactions.py:87:8: C0103: Variable name "deletedDict" doesn't conform to snake_case naming style (invalid-name)
+transactions.py:94:4: C0103: Method name "sumByDate" doesn't conform to snake_case naming style (invalid-name)
+transactions.py:104:4: C0103: Method name "sumByCat" doesn't conform to snake_case naming style (invalid-name)
+
+-----------------------------------
+Your code has been rated at 9.06/10
+
+(base) felix@FelixdeMBP PA02 % pytest -v test_transactions.py
+=========================================================================================== test session starts ============================================================================================
+platform darwin -- Python 3.9.5, pytest-6.2.5, py-1.9.0, pluggy-0.12.0 -- /Users/felix/opt/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/felix/Dropbox/CS103a/PA02, configfile: pytest.ini
+collected 4 items                                                                                                                                                                                          
+
+test_transactions.py::test_add_transaction PASSED                                                                                                                                                    [ 25%]
+test_transactions.py::test_delete_transaction PASSED                                                                                                                                                 [ 50%]
+test_transactions.py::test_sumByDate_transaction PASSED                                                                                                                                              [ 75%]
+test_transactions.py::test_sumByCat_transaction PASSED                                                                                                                                               [100%]
+
+============================================================================================ 4 passed in 0.08s =============================================================================================
+
+
+(base) felix@FelixdeMBP PA02 % python tracker.py
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 4
+-- show transactions --
+
+
+rowid      item       amount     category   date       description                   
+----------------------------------------------------------------------
+1          00001234   100        food       20220224   sth                           
+2          00001288   150        food       20220224   sth else                      
+3          00004345   30         food       20220228   sth....                       
+4          00001500   20         vehicle    20220320   sth                           
+> 6
+-- delete transaction --
+the id you want to delete: 4
+> 4
+-- show transactions --
+
+
+rowid      item       amount     category   date       description                   
+----------------------------------------------------------------------
+1          00001234   100        food       20220224   sth                           
+2          00001288   150        food       20220224   sth else                      
+3          00004345   30         food       20220228   sth....                       
+> 7
+-- summarize transactions by date --
+date       sum       
+---------------
+20220224   250       
+20220228   30        
+> 10
+-- summarize transactions by category --
+date       sum       
+---------------
+food       280     
