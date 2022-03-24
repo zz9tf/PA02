@@ -101,6 +101,16 @@ class Transaction:
         con.close()
         return tuples
     
+    def sumByMonth(self):
+        ''' sum up item nums group by month ----- Written by Qishi '''
+        con = sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''select date/100%202200 as n, sum(amount) from transactions group by date/100%202200''')
+        tuples = cur.fetchall()
+        con.commit()
+        con.close
+        return tuples
+    
     def sumByYear(self):
         ''' sum up item nums group by year ----- Written by Nan '''
         con= sqlite3.connect(self.dbfile)
