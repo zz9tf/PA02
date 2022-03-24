@@ -62,7 +62,16 @@ def test_sumByDate_transaction(tran_db):
     sum = tuples[0][1]
     assert date == 20220316
     assert sum == 1900
-    
+
+@pytest.mark.subByMonth_transaction
+def test_sumByMonth_transaction(tran_db):
+    '''sum the accounts by month'''
+    tuples = tran_db.sumByMonth()
+    month = tuples[0][0]
+    sum = tuples[0][1]
+    assert month == 3
+    assert sum == 1900
+        
 @pytest.mark.sumByYear_transaction
 def test_sumByYear_transaction(tran_db):
     ''' sum the accounts by year'''
