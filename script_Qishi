@@ -1,0 +1,69 @@
+(base) ➜  PA02 git:(main) ✗ pylint transactions.py
+************* Module transactions
+transactions.py:16:0: C0301: Line too long (110/100) (line-too-long)
+transactions.py:93:0: C0303: Trailing whitespace (trailing-whitespace)
+transactions.py:103:0: C0303: Trailing whitespace (trailing-whitespace)
+transactions.py:108:0: C0301: Line too long (110/100) (line-too-long)
+transactions.py:113:0: C0303: Trailing whitespace (trailing-whitespace)
+transactions.py:123:0: C0303: Trailing whitespace (trailing-whitespace)
+transactions.py:87:8: C0103: Variable name "deletedDict" doesn't conform to snake_case naming style (invalid-name)
+transactions.py:94:4: C0103: Method name "sumByDate" doesn't conform to snake_case naming style (invalid-name)
+transactions.py:104:4: C0103: Method name "sumByMonth" doesn't conform to snake_case naming style (invalid-name)
+transactions.py:111:8: W0104: Statement seems to have no effect (pointless-statement)
+transactions.py:114:4: C0103: Method name "sumByYear" doesn't conform to snake_case naming style (invalid-name)
+transactions.py:124:4: C0103: Method name "sumByCat" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 8.50/10 (previous run: 8.50/10, +0.00)
+
+(base) ➜  PA02 git:(main) ✗ pytest -v             
+============================================================================================================================= test session starts ==============================================================================================================================
+platform darwin -- Python 3.9.6, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /Users/rex/miniforge3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/rex/Desktop/PA02, configfile: pytest.ini
+plugins: anyio-3.3.0
+collected 10 items                                                                                                                                                                                                                                                             
+
+test_category.py::test_to_cat_dict PASSED                                                                                                                                                                                                                                [ 10%]
+test_category.py::test_add PASSED                                                                                                                                                                                                                                        [ 20%]
+test_category.py::test_delete PASSED                                                                                                                                                                                                                                     [ 30%]
+test_category.py::test_update PASSED                                                                                                                                                                                                                                     [ 40%]
+test_transactions.py::test_add_transaction PASSED                                                                                                                                                                                                                        [ 50%]
+test_transactions.py::test_delete_transaction PASSED                                                                                                                                                                                                                     [ 60%]
+test_transactions.py::test_sumByDate_transaction PASSED                                                                                                                                                                                                                  [ 70%]
+test_transactions.py::test_sumByMonth_transaction PASSED                                                                                                                                                                                                                 [ 80%]
+test_transactions.py::test_sumByYear_transaction PASSED                                                                                                                                                                                                                  [ 90%]
+test_transactions.py::test_sumByCat_transaction PASSED                                                                                                                                                                                                                   [100%]
+
+============================================================================================================================== 10 passed in 0.07s ==============================================================================================================================
+(base) ➜  PA02 git:(main) ✗ python tracker.py
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 4
+-- show transactions --
+
+
+rowid      item       amount     category   date       description                   
+----------------------------------------------------------------------
+1          00001234   100        food       20220224   sth                           
+2          00001288   150        food       20220224   sth else                      
+3          00004345   30         food       20220228   sth....                       
+> 8
+-- summarize transactions by month --
+month      sum       
+---------------
+2          280       
+> 0
+(base) ➜  PA02 git:(main) ✗ 
