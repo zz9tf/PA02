@@ -28,7 +28,6 @@
 ## Script
 #### All features in tracker.py
 ```
-{
 (base) floradembp:PA02 flora$ ls
 README.md		script_Nan		test_transactions.py
 __pycache__		script_Qishi		tracker.py
@@ -208,13 +207,12 @@ category.db		script_Zheng		transaction.db
 category.py		script_Zixin		transactions.py
 pytest.ini		test.db			typescript
 requirement.md		test_category.py
-}
+
 ```
 
 #### pylint
 
 ```
-{
 bash-3.2$ pylint tracker.py
 ************* Module tracker
 tracker.py:127:65: C0303: Trailing whitespace (trailing-whitespace)
@@ -247,12 +245,10 @@ transactions.py:124:4: C0103: Method name "sumByCat" doesn't conform to snake_ca
 -----------------------------------
 Your code has been rated at 8.50/10
 
-}
 ```
 #### pytest 
 
 ```
-{
 bash-3.2$ pytest -v test_transactions.py
 ============================= test session starts ==============================
 platform darwin -- Python 3.9.5, pytest-6.2.5, py-1.9.0, pluggy-1.0.0 -- /Users/flora/miniconda3/bin/python
@@ -272,5 +268,4 @@ bash-3.2$ exit
 exit
 
 Script done, output file is typescript
-}
 ```
