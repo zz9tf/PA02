@@ -1,4 +1,4 @@
-### PA02 Read me
+# PA02 Read me
 
 ## This is a Finance Tracker app, which can record and track transactions whith 11 functions:
 
@@ -569,7 +569,7 @@ category.py		script_Zixin		transactions.py
 pytest.ini		test.db			typescript
 requirement.md		test_category.py
 
-## Pylint
+#### Pylint
 bash-3.2$ pylint tracker.py
 ************* Module tracker
 tracker.py:127:65: C0303: Trailing whitespace (trailing-whitespace)
